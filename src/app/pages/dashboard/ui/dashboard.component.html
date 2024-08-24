@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-lg-6 mt-15">
+    <h3>{{ "STAT.TITLE_DASH" | translate }}</h3>
+  </div>
+</div>
+
+<div class="row mt-10" *ngIf="listInfoDashb; else skeletonLoader"></div>
+
+<ng-template #skeletonLoader>
+  <ngx-skeleton-loader count="17"></ngx-skeleton-loader>
+</ng-template>

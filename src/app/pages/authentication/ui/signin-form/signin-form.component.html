@@ -1,0 +1,56 @@
+<ngx-loading [show]="loading" [config]="{
+    animationType: ngxLoadingAnimationTypes.circle,
+    primaryColour: primaryColour,
+    secondaryColour: secondaryColour,
+    backdropBorderRadius: '5px',
+  }">
+</ngx-loading>
+<div class="imako__heading pd-btm-20">
+  <h3 class="imako__form-title imako__form-title__one m-0">
+    {{ "SIGN_IN.TITLE" | translate }}
+  </h3>
+</div>
+<form class="imako__form-main" [formGroup]="form">
+  @for(input of formInputs; track input.id)
+  {
+  <div class="form-group">
+    <label for="{{ input.name }}"><strong>{{ input.label | translate }}</strong>
+      @if(input.required)
+      {
+      <span class="text-danger">*</span>
+      }
+    </label>
+    <div class="form-group__input">
+      <input class="imako__form-input" type="{{ input.type }}" name="{{ input.name }}" [formControlName]="input.name"
+        [placeholder]="input.placeholder | translate" required="{{ input.required }}" />
+    </div>
+
+  </div>
+
+  }
+  <div *ngFor="let input of formInputs" class="form-group">
+
+  </div>
+  <div class="form-group">
+    <div class="imako__check-inline">
+      <div class="imako__checkbox">
+        <input id="checkbox" name="checkbox" type="checkbox" />
+        <label for="checkbox">{{
+          "SIGN_IN.LABEL_REMEMBER_ME" | translate
+          }}</label>
+      </div>
+      <div class="imako__forgot">
+        <a routerLink="/auth/forgot-password" class="forgot-pass cursor-pointer"><u>{{ "SIGN_IN.LABEL_FORGOT_PASSWORD" |
+            translate }}</u></a>
+      </div>
+    </div>
+  </div>
+  <div class="form-group mg-top-30">
+    <div class="imako__button">
+      <button type="button" class="imako__btn" (click)="signIn()"
+        [disabled]="!form.get('username').value || !form.get('password').value">
+        {{ "SIGN_IN.FORM.LABEL_BTN_LOGIN" | translate }}
+      </button>
+    </div>
+  </div>
+</form>

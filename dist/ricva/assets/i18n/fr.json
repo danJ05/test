@@ -1,0 +1,172 @@
+{
+  "GeneralStrings": {
+    "TITLE": "BIENVENUE SUR RICVA",
+    "SUB_TITLE": "RICVA est une plateforme de suivi et de gestioN du secteur agricole, de la production à la vente.",
+    "DIGITAL_PLATFORM": "DIGITAL PLATFORM",
+    "ENV_DEV_PREPROD": "(PREPRODUCTION)",
+    "LABEL_ADD": "Créer un entrepôt",
+    "LABEL_BACK": "Retour",
+    "PLACEHOLDER_SEARCH": "Recherche",
+    "LABEL_REFRESH": "Rafraîchir",
+    "LABEL_SAVE": "Enregistrer",
+    "CONFIRMATION": {
+      "TITLE": "Êtes-vous sûr?",
+      "ADD_TEXT": "Voulez-vous vraiment ajouter cet entrepôt?",
+      "UPDATE_TEXT": "Voulez-vous vraiment mettre à jour cet entrepôt?",
+      "CONFIRM_BUTTON": "Oui, confirmer",
+      "CANCEL_BUTTON": "Non, annuler"
+    },
+    "MessageToastNEW": {
+      "FORM": {
+        "REQUIRED_FIELDS": "Veuillez remplir tous les champs requis."
+      }
+    },
+    "LABEL_CLOSE": "Fermer",
+    "LABEL_CHOOSE": "Choisir",
+    "LABEL_OPEN": "Ouvrir",
+    "LABEL_EDIT": "Modifier",
+    "LABEL_DELETE": "Supprimer",
+    "NO_DATA": "Aucune donnée disponible",
+    "LABEL_PASSWORD": "Mot de passe",
+    "LABEL_LOGOUT": "Déconnexion",
+    "FR_LANG": "Français",
+    "EN_LANG": "Anglais",
+    "COPYRIGHT": "Copyright 2024 © <strong>RICVA</strong>",
+    "MessageToast": {
+      "noDataInTable": "Aucune donnée dans le tableau",
+      "FORM": {
+        "REQUIRED_FIELDS": "Les champs marqués d'un astérisque (*) sont obligatoires."
+      }
+    }
+  },
+  "MessageToast": {
+    "Login": {
+      "REQUIRED_FIELDS": "Un nom d'utilisateur et un mot de passe sont nécessaires"
+    },
+    "ForgotPassword": {
+      "REQUIRED_FIELDS": "Oups ! Il semble que vous ayez oublié de saisir votre adresse email. Veuillez la renseigner pour recevoir un lien de réinitialisation de mot de passe"
+    }
+  },
+  "COMMON_PAGE": {
+    "MOB_MES": "Pour une meilleure expérience, Nous vous invitons à utiliser un ordinateur portable.",
+    "INTERNAL_ERROR": {
+      "DESC": "Il semble que nous ayons une erreur interne, veuillez contacter l'administrateur."
+    },
+    "NOT_FOUND": {
+      "TITLE": "Oups ! La page que vous recherchez n'existe pas !",
+      "DESC": "La page que vous recherchez a peut-être été supprimée, son nom a changé ou elle est temporairement indisponible."
+    },
+    "NOT_NETWORK": {
+      "TITLE": "Problème de connexion réseau",
+      "DESC": "Votre connexion réseau semble être lente, ce qui peut entraîner des retards dans le traitement de votre requête."
+    }
+  },
+  "SIGN_IN": {
+    "TITLE": "Connexion",
+    "LABEL_REMEMBER_ME": "Se souvenir de moi",
+    "LABEL_FORGOT_PASSWORD": "Mot de passe oublié ?",
+    "FORM": {
+      "USERNAME": {
+        "LIBELLE": "Email ou Téléphone",
+        "PLACEHOLDER": "Ex : amarius",
+        "IS_REQUIRED": true
+      },
+      "PASSWORD": {
+        "LIBELLE": "Mot de passe",
+        "PLACEHOLDER": "*****************",
+        "IS_REQUIRED": true
+      },
+      "LABEL_BTN_LOGIN": "Connexion"
+    }
+  },
+  "FORGOT_PASSWORD": {
+    "TITLE": "Mot de passe oublié",
+    "LABEL_SIGNIN": "Retour à la connexion",
+    "FORM": {
+      "EMAIL": {
+        "LIBELLE": "Email",
+        "PLACEHOLDER": "Ex : amarius@email.com",
+        "IS_REQUIRED": true
+      }
+    },
+    "LABEL_BTN_FORGOT_PASSWORD": "Réinitialiser le mot de passe"
+  },
+  "MENU": [
+    {
+      "title": "Tableau de bord"
+    },
+    {
+      "headTitle": "Administration"
+    },
+    {
+      "title": "Gestions entrepôts",
+      "subItems": [
+        {
+          "title": "Historique des entrepôts"
+        }
+      ]
+    }
+  ],
+  "STAT": {
+    "TITLE_DASH": "Vue Génerale - Plateforme RICVA"
+  },
+  "FORM_ENTREPOT": {
+    "BREADCRUMB": {
+      "FIRST": "Accueil",
+      "SECOND": "Historique des entrepôts"
+    },
+    "COLUMNS": [
+      {
+        "header": "LIbelle"
+      },
+      {
+        "header": "Superficie (m²)"
+      },
+      {
+        "header": "Longitude"
+      },
+      {
+        "header": "Lattitude"
+      },
+      {
+        "header": "Placer"
+      }
+    ],
+    "BODY_TITLE": "Historique des entrepôts",
+    "TITLE_MODAL": {
+      "STORE": "Créer un entrepôt",
+      "UPDATE": "Modification infos"
+    },
+    "SUPERFICIE": {
+      "LIBELLE": "Superficie",
+      "PLACEHOLDER": "Ex : 5000m²",
+      "IS_REQUIRED": true
+    },
+    "LIBELLE": {
+      "LIBELLE": "Libellé",
+      "PLACEHOLDER": "Ex : AAAAAAAAA",
+      "IS_REQUIRED": true
+    },
+    "LONGITUDE": {
+      "LIBELLE": "Longitude",
+      "PLACEHOLDER": "Ex : 5000m",
+      "IS_REQUIRED": true
+    },
+    "LATITUDE": {
+      "LIBELLE": "Latitude",
+      "PLACEHOLDER": "Ex : 5000m",
+      "IS_REQUIRED": true
+    },
+    "PLACER": {
+      "LIBELLE": "PLACER",
+      "PLACEHOLDER": "Ex : Aboisso",
+      "IS_REQUIRED": true
+    },
+    "DELETE_CONFIRMATION": {
+      "title": "En êtes vous sûr ?",
+      "message": "Vous allez supprimer l'entrepôt <u><strong>{{username}}</strong></u>",
+      "cancelButton": "Non",
+      "confirmButton": "Oui"
+    }
+  }
+}

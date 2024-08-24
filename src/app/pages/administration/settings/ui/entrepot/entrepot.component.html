@@ -1,0 +1,108 @@
+<app-breadcrumb [breadcrumb]="breadcrumbObject"></app-breadcrumb>
+<div>
+  <mat-card class="mb-25 imako-card">
+    <mat-card-header>
+      <div class="container-fluid px-0">
+        <!-- Bouton en haut à droite -->
+        <div class="d-flex justify-content-end mb-3">
+          <button (click)="openDialogHistoryEntrepot('add', null)" mat-flat-button class="imako" [style.height.px]="36">
+            <i class="ri-add-fill"></i>
+            {{ "FORM_ENTREPOT.TITLE_MODAL.STORE" | translate }}
+          </button>
+        </div>
+        
+        <!-- Titre à gauche et barre de recherche à droite -->
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 [style.margin-bottom.px]="0" [style.line-height.px]="36">
+            {{ "FORM_ENTREPOT.BODY_TITLE" | translate }}
+          </h3>
+          <div [style.width.px]="250">
+            <input type="text" 
+                   (input)="onInputChange($event)" 
+                   class="form-control" 
+                   [style.height.px]="51"
+                   [style.marginTop.px]="28"
+                   [placeholder]="'GeneralStrings.PLACEHOLDER_SEARCH' | translate" />
+          </div>
+        </div>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      @if(listHistoryEntrepot && listHistoryEntrepot?.length > 0)
+      {
+        <div class="row mt-3">
+          <p-table 
+            #dt 
+            [value]="listHistoryEntrepot" 
+            [rows]="10" 
+            [paginator]="true" 
+            responsiveLayout="scroll"
+            [globalFilterFields]="globalFilterFieldsObject"
+            styleClass="p-datatable-gridlines" 
+            [rowHover]="true"
+            dataKey="id" 
+            currentPageReportTemplate="Affichage de {first} à {last} des {totalRecords} données"
+            [showCurrentPageReport]="true"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th scope="col" class="text-center">#</th>
+                <ng-container *ngFor="let col of columns">
+                  <th 
+                    [pSortableColumn]="col.field" 
+                    [class.text-center]="col.isCenter" 
+                    scope="col"
+                  >
+                    {{ col.header | translate }}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                  </th>
+                </ng-container>
+                <th class="text-center">Actions</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-i="rowIndex" let-user>
+              <tr>
+                <td class="text-center">{{ i + 1 }}</td>
+                <ng-container *ngFor="let col of columns">
+                  <ng-container>
+                    <td [class.text-center]="col.isCenter">
+                      {{getCellValue(col.field, user) }}
+                    </td>
+                  </ng-container>
+                </ng-container>
+                <td class="text-center">
+                  <button 
+                    (click)="openDialogHistoryEntrepot('edit', user)" 
+                    pButton type="button" 
+                    icon="pi pi-pencil"
+                    class="p-button-rounded p-button-secondary"
+                  >
+                </button>
+                <button 
+                  (click)="handleDeleteHistoryEntrepot(user)"
+                  pButton type="button"
+                  icon="pi pi-trash"
+                  class="p-button-rounded p-button-danger ml-2"
+                ></button>
+                </td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+              <tr *ngIf="listHistoryEntrepot?.length <= 0">
+                <td class="text-center" colspan="15">
+                  <span>
+                    {{ "GeneralStrings.NO_DATA" | translate }}
+                  </span>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      }
+      @else {
+        <ngx-skeleton-loader count="10"></ngx-skeleton-loader>
+      }
+      
+    </mat-card-content>
+  </mat-card>
+</div>
